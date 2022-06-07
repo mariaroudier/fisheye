@@ -1,5 +1,5 @@
 function photographerFactory(data) {
-    const { name, portrait } = data;
+    const { name, city, country, tagline, price, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -9,9 +9,21 @@ function photographerFactory(data) {
         img.setAttribute("src", picture)
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
+        const location = document.createElement( 'p' )
+        location.textContent = city + ", " + country
+        const taglineP = document.createElement( 'p' )
+        taglineP.textContent = tagline;
+        const priceP = document.createElement( 'p' )
+        priceP.textContent = price;
+
         article.appendChild(img);
         article.appendChild(h2);
-        return (article);
+        article.appendChild(location);
+        article.appendChild(taglineP);
+        article.appendChild(priceP);
+
+        return article;
     }
-    return { name, picture, getUserCardDOM }
+    return { name, city, country, tagline, price, picture, getUserCardDOM }
 }
+
