@@ -9,11 +9,32 @@
   <body>
     <header>
       <a href="index.html"><img src="assets/images/logo.png" class="logo" alt=“Fisheye Home page”/>
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
+        <h1 id="photographer-name"></h1>
+        <h2 id="photographer-location"></h2>
+        <p id="photographer-tagline"></p>
+        <img id="photographer-photo" src="" alt=""/>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
+      <div id="photos-section">
+        <!-- <article id="article">
+          <div class="image-box">
+            <img class="image" src="" alt=""/>
+          </div>
+          <div id="title-and-likes">
+            <p class="name-image"></p>
+            <div class="quantity-likes">
+              <p class="quantity-likes number-likes"></p>
+              <p class="quantity-likes icon-likes"></p>
+            </div>
+          </div>
+        </article> -->
+      </div>
+
+
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -23,14 +44,16 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
+						<label id="name">Prénom</label>
 						<input />
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/factories/photo.js"></script>
+    <script src="scripts/factories/video.js"></script>
+    <script src="scripts/factories/MediaFactory.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
   </body>

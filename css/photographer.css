@@ -74,3 +74,13 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+#photographer-photo {
+    width: 100px;
+    height: 100px;
+}
+
+#photos-section img{
+    width: 100px;
+    height: 100px;
+}
