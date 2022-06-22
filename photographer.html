@@ -4,7 +4,11 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/164bc814ec.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   </head>
   <body>
     <header>
@@ -12,26 +16,34 @@
       </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <h1 id="photographer-name"></h1>
-        <h2 id="photographer-location"></h2>
-        <p id="photographer-tagline"></p>
-        <img id="photographer-photo" src="" alt=""/>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <div id="info-additional">
+          <div id="all-likes">
+            <span id="sum-likes"></span>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        <span id="text-price"></span>
       </div>
-      <div id="photos-section">
-        <!-- <article id="article">
-          <div class="image-box">
-            <img class="image" src="" alt=""/>
+      <div class="photograph-header">
+        <div id="info-photographer">
+          <h1 id="photographer-name"></h1>
+          <h2 id="photographer-location"></h2>
+          <p id="photographer-tagline"></p>
+        </div>
+        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div id="box-photo">
+          <img id="photographer-photo" src="" alt=""/>
+        </div>
+      </div>
+      <div id="photograph-main">
+          <div id="sorting">
+            <span id="sorting-text">Trier par</span>
+            <select id="select-sorting" size="1">
+              <option class="texte-methode" value="Popularité">Popularité</option>
+              <option class="texte-methode" value="Date">Date</option>
+              <option class="texte-methode" value="Titre">Titre</option>
+            </select>
           </div>
-          <div id="title-and-likes">
-            <p class="name-image"></p>
-            <div class="quantity-likes">
-              <p class="quantity-likes number-likes"></p>
-              <p class="quantity-likes icon-likes"></p>
-            </div>
-          </div>
-        </article> -->
+        <div id="photos-section"></div>
       </div>
 
 
@@ -39,22 +51,43 @@
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <div id="header-text">
+            <h2>Contactez-moi</h2>
+            <span id="name-photographer"></span>
+          </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label id="name">Prénom</label>
-						<input />
+   
+				<form id ="contact-form" name="contact" action="photographer.html" method="get" >
+					<div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom">
+						<label for="first">Prénom</label>
+            <input class="text-control" type="text" id="first" name="first" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom">
+            <label for="last">Nom</label>
+            <input class="text-control" type="text" id="last" name="last" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+          </div>
+          <div class="formData" data-error="Veuillez entrer email correct">
+            <label for="email">Email</label>
+            <input class="text-control" type="text" id="email" name="email"/>
+          </div>
+          <div class="formData" > 
+            <label for="message">Votre message</label>
+            <textarea class="text-control text-area" type="text" id="message" name="message" rows="5"/></textarea>
+          </div>
+          <br>
+          <input class="contact_button btn-submit" type="submit" value="Envoyer"/>
+          <!-- <button class="contact_button send-button" onclick="closeModal()"type="submit">Envoyer</button> -->
 				</form>
 			</div>
 		</div>
+    <script src="scripts/Lightbox.js"></script>
     <script src="scripts/factories/photo.js"></script>
     <script src="scripts/factories/video.js"></script>
     <script src="scripts/factories/MediaFactory.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
+
   </body>
 </html>

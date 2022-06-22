@@ -1,5 +1,6 @@
 
 
+// eslint-disable-next-line no-unused-vars
 class Photo {
     constructor(data) {
         this.id = data.id
@@ -9,45 +10,71 @@ class Photo {
         this.date = data.date
         this.price = data.price
         this.image = `assets/images/${data.photographerId}/${data.image}`;
+        document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)+this.likes
     }
 
     getPhotoCardDOM() {
-        //const article = document.getElementById( 'article' );
+        // construction DOM
         const article = document.createElement( 'article' );
-        const imageBox = document.createElement( 'div' );
+            article.id = "article-photo"
+        const imageBox = document.createElement( 'a' );
+            imageBox.id = "image-box";
+            imageBox.setAttribute( "href", "www.mail.ru" )
         const images = document.createElement( 'img' );
             images.setAttribute( "src", this.image )
             images.setAttribute( "alt", this.title )
         const titleAndLikes = document.createElement( 'div' );
+            titleAndLikes.id = "title-and-likes"
         const nameOfImage = document.createElement( 'p' );
             nameOfImage.textContent = this.title;
-        const quantityLikes = document.createElement( 'div' );
+            nameOfImage.id = "name-of-image"
+        const likesOfPhoto = document.createElement( 'div' );
+            likesOfPhoto.id = "quantity-likes"
+        const clickIcon = document.createElement ( 'a' )
+            clickIcon.id = "click-icon"
+            clickIcon.setAttribute("href", "###")
+        const heartIcon = document.createElement ( 'i' )
+            heartIcon.className = "fa-solid fa-heart"
+            heartIcon.id = "icon-heart"
         const numberLikes = document.createElement( 'p' );
              numberLikes.textContent = this.likes
+             numberLikes.classList = "number-likes"
 
+
+
+
+        // les enfants
         article.appendChild(imageBox)
             imageBox.appendChild(images)
         article.appendChild(titleAndLikes)
             titleAndLikes.appendChild(nameOfImage)
-            titleAndLikes.appendChild(quantityLikes)
-                quantityLikes.appendChild(numberLikes)
-
-
-        //const iconLikes = document.createElement( 'p' );
-
-
-        /*const images = document.querySelector( '.image' );
-            images.setAttribute( "src", this.image )
-            images.setAttribute( "alt", this.title )
-        const nameOfImage = document.querySelector( '.name-image' );
-            nameOfImage.textContent = this.title;
+            titleAndLikes.appendChild(likesOfPhoto)
+                likesOfPhoto.appendChild(numberLikes)
+                likesOfPhoto.appendChild(clickIcon)
+                    clickIcon.appendChild(heartIcon)
+               
+        // ajoute +1 like par click et toogle le .class
+        heartIcon.addEventListener('click', () => {
+            numberLikes.classList.toggle('number-clicked');
     
-        const quantityOfLikes = document.querySelector( '.number-likes' );
-            quantityOfLikes.textContent = this.likes
-        */
-
+            if(numberLikes.classList.contains('number-clicked')) {
+                this.likes++
+                document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)+1
+            } else if (!numberLikes.classList.contains('number-clicked')) {
+                this.likes-- 
+                document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)-1
+            }
+            numberLikes.textContent = this.likes
+        })
+        
+      
+        
         return article;
+
     }
+    
+
+
 }
 
     
