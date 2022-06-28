@@ -183,8 +183,6 @@
     margin-bottom: 10px;
 }
 
-
-
 #image-box img, video{
     width: 350px;
     height: 300px;
@@ -206,7 +204,7 @@
     gap: 15px
 }
 
-#name-of-image{
+.name-of-image{
     font-size: 24px;
     color: #901C1C;
     margin: 0;
@@ -300,13 +298,13 @@
     height: 100%;
 }
 
-.modal header img {
+.cross {
     cursor: pointer;
     align-self: flex-start;
     padding-top: 20px;
 }
 
-.modal header img:hover {
+.cross:hover {
     transform: scale(1.2);
     cursor: pointer;
     -webkit-transform: scale(1.2);
@@ -389,3 +387,66 @@ form input {
   .formData[data-error-visible="true"] .text-control {
     border: 2px solid #525252;
   }
+
+  /* Lightbox */
+
+#lightbox{
+    display: none;
+    position: fixed;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: white;
+    align-items: center;
+    padding-left: 131px;
+    padding-right: 131px;
+
+}
+
+#lightbox .cross {
+    position: absolute;
+    top: 20px;
+    right: 126px;
+    
+
+}
+.fa-chevron-right, .fa-chevron-left {
+    color: #901C1C;
+    font-size: 30px;
+
+}
+.fa-chevron-left{
+    margin-right: 34px;
+}
+
+.fa-chevron-right{
+    margin-left: 34px;
+}
+
+#article-lightbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height: 87%;
+    
+
+}
+
+#photo-lightbox{
+    width: 100%;
+    height: 100%;
+    
+    
+    
+}
+
+#lightbox .name-of-image{
+padding-top: 12px;
+}

@@ -29,7 +29,7 @@
           <h2 id="photographer-location"></h2>
           <p id="photographer-tagline"></p>
         </div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button"">Contactez-moi</button>
         <div id="box-photo">
           <img id="photographer-photo" src="" alt=""/>
         </div>
@@ -37,13 +37,21 @@
       <div id="photograph-main">
           <div id="sorting">
             <span id="sorting-text">Trier par</span>
-            <select id="select-sorting" size="1">
-              <option class="texte-methode" value="Popularité">Popularité</option>
-              <option class="texte-methode" value="Date">Date</option>
-              <option class="texte-methode" value="Titre">Titre</option>
-            </select>
+            <ul id="select-sorting">
+              <li class="sorting-methode" id="sorting-popularity">Popularité</li>
+              <li class="sorting-methode" id="sorting-date">Date</li>
+              <li class="sorting-methode" id="sorting-titre">Titre</li>
+            </ul>
           </div>
-        <div id="photos-section"></div>
+        <div id="photos-section">
+          <div id="lightbox">
+              <img class="cross" src="assets/icons/close_rouge.svg" />
+              <i class="fa-solid fa-chevron-left"></i>
+              <article id="article-lightbox">
+              </article>
+              <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
       </div>
 
 
@@ -55,7 +63,7 @@
             <h2>Contactez-moi</h2>
             <span id="name-photographer"></span>
           </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img id="cross-modale" class="cross" src="assets/icons/close.svg"/>
         </header>
    
 				<form id ="contact-form" name="contact" action="photographer.html" method="get" >
@@ -74,11 +82,10 @@
           </div>
           <div class="formData" > 
             <label for="message">Votre message</label>
-            <textarea class="text-control text-area" type="text" id="message" name="message" rows="5"/></textarea>
+            <textarea class="text-control text-area" type="text" id="message" name="message" rows="5"></textarea>
           </div>
           <br>
           <input class="contact_button btn-submit" type="submit" value="Envoyer"/>
-          <!-- <button class="contact_button send-button" onclick="closeModal()"type="submit">Envoyer</button> -->
 				</form>
 			</div>
 		</div>

@@ -7,18 +7,15 @@ let firstChecked = true
 let lastChecked = true
 let emailChecked = true
 
-// eslint-disable-next-line no-unused-vars
-function displayModal() {
-      contactModal.style.display = "block";
-} 
-// eslint-disable-next-line no-unused-vars
-function closeModal() {
-      contactModal.style.display = "none";
-}
+
+document.querySelector('.contact_button').addEventListener('click',() => {
+    document.getElementById('contact_modal').style.display = "block";
+})
+
+
 
 // Verification de dennées dans les champs
 form.addEventListener('submit',function(ev) {
-      
     // on arrete l'envoy de forme par default
     ev.preventDefault() 
     inputIn.forEach(elem => {
@@ -51,7 +48,6 @@ form.addEventListener('submit',function(ev) {
             formData[2].dataset.errorVisible = "true"
             }
         }
-
         //disable error warning
         formData.forEach(elem => elem.addEventListener("click", () => {
             elem.dataset.errorVisible = "false";
@@ -64,11 +60,21 @@ form.addEventListener('submit',function(ev) {
     })
 
     if (firstChecked == true &&  lastChecked == true &&  emailChecked == true ) {
+        contactModal.style.display = 'none';
+        // Pour afficher les données en console
         inputIn.forEach(elem => {
             console.log(elem.value)
         })
-        contactModal.style.display = 'none';
-       
     }
+    
+})
 
+window.addEventListener('keydown',(e) => {
+    if(e.key == 'Esc' || e.key == 'Escape') {
+        document.getElementById('contact_modal').style.display = "none";
+    }
+})
+
+document.getElementById('cross-modale').addEventListener('click', () => {
+    document.getElementById('contact_modal').style.display = "none"
 })

@@ -17,7 +17,7 @@ class Video {
             article.id = "article-photo"
         const imageBox = document.createElement( 'a' );
             imageBox.id = "image-box";
-            imageBox.setAttribute( "href", "www.mail.ru" )
+            imageBox.setAttribute( "href", "###" )
         const images = document.createElement( 'video' );
             images.setAttribute( "src", this.video )
             images.setAttribute( "alt", this.title )
@@ -28,6 +28,9 @@ class Video {
             nameOfImage.id = "name-of-image"
         const likesOfPhoto = document.createElement( 'div' );
             likesOfPhoto.id = "quantity-likes"
+        const clickIcon = document.createElement ( 'a' )
+            clickIcon.id = "click-icon"
+            clickIcon.setAttribute("href", "###")
         const heartIcon = document.createElement ( 'i')
             heartIcon.className = "fa-solid fa-heart"
             heartIcon.id = "icon-heart"
@@ -42,7 +45,8 @@ class Video {
              titleAndLikes.appendChild(nameOfImage)
              titleAndLikes.appendChild(likesOfPhoto)
                 likesOfPhoto.appendChild(numberLikes)
-                likesOfPhoto.appendChild(heartIcon)
+                likesOfPhoto.appendChild(clickIcon)
+                    clickIcon.appendChild(heartIcon)
 
         // ajoute +1 like par click et toogle le .class
         heartIcon.addEventListener('click', () => {
@@ -57,6 +61,12 @@ class Video {
             }
             numberLikes.textContent = this.likes
         })
+
+        // Lancer lightbox par click
+        imageBox.addEventListener('click', () => {
+            document.getElementById('lightbox').style.display = "block"
+        })
+
 
         return article;
     }

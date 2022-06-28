@@ -11,23 +11,25 @@ class Photo {
         this.price = data.price
         this.image = `assets/images/${data.photographerId}/${data.image}`;
         document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)+this.likes
+
     }
 
     getPhotoCardDOM() {
-        // construction DOM
+        // DOM
         const article = document.createElement( 'article' );
             article.id = "article-photo"
         const imageBox = document.createElement( 'a' );
             imageBox.id = "image-box";
-            imageBox.setAttribute( "href", "www.mail.ru" )
+            imageBox.setAttribute( "href", "###" )
         const images = document.createElement( 'img' );
             images.setAttribute( "src", this.image )
             images.setAttribute( "alt", this.title )
+            images.className = "image-file"
         const titleAndLikes = document.createElement( 'div' );
             titleAndLikes.id = "title-and-likes"
         const nameOfImage = document.createElement( 'p' );
             nameOfImage.textContent = this.title;
-            nameOfImage.id = "name-of-image"
+            nameOfImage.className = "name-of-image"
         const likesOfPhoto = document.createElement( 'div' );
             likesOfPhoto.id = "quantity-likes"
         const clickIcon = document.createElement ( 'a' )
@@ -40,9 +42,6 @@ class Photo {
              numberLikes.textContent = this.likes
              numberLikes.classList = "number-likes"
 
-
-
-
         // les enfants
         article.appendChild(imageBox)
             imageBox.appendChild(images)
@@ -52,7 +51,13 @@ class Photo {
                 likesOfPhoto.appendChild(numberLikes)
                 likesOfPhoto.appendChild(clickIcon)
                     clickIcon.appendChild(heartIcon)
-               
+
+        // Pour lightbox id
+        images.addEventListener('click', () => {
+            const idModel = new Lightbox(this.id)
+            
+        })
+
         // ajoute +1 like par click et toogle le .class
         heartIcon.addEventListener('click', () => {
             numberLikes.classList.toggle('number-clicked');
@@ -66,13 +71,19 @@ class Photo {
             }
             numberLikes.textContent = this.likes
         })
-        
-      
-        
+
+
+
         return article;
 
     }
     
+    DOMLightbox () {
+        const imgLightbox = document.createElement('img')
+            imgLightbox.setAttribute("src",this.image)
+            imgLightbox.setAttribute( "alt", this.title )
+        return imgLightbox
+    }
 
 
 }
