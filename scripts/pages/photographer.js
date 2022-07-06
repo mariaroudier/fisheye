@@ -102,6 +102,12 @@ sortingTitre.addEventListener('click' ,() => {
       
       Lightbox.setMedia(mediaPhotographer)
 
+      chevron.classList.toggle('fa-chevron-up');
+      if(chevron.classList.contains('fa-chevron-up')) {
+            sortingTitre.style.display = "none";
+            sortingDate.style.display = "none";
+            chevron.classList.toggle('fa-chevron-down');
+      }
 })
 
       // par date
@@ -117,4 +123,10 @@ sortingDate.addEventListener('click' ,() => {
      
       Lightbox.setMedia(mediaPhotographer)
 
+      chevron.classList.toggle('fa-chevron-up');
+      if(chevron.classList.contains('fa-chevron-up')) {
+            sortingTitre.style.display = "none";
+            sortingDate.style.display = "none";
+            chevron.classList.toggle('fa-chevron-down');
+      }
 })
