@@ -62,7 +62,7 @@ chevron.addEventListener('click' ,() => {
             sortingDate.style.display = "block";
             sortingLikes.style.paddingBottom = "0"
             sorting.style.boxShadow = "0 10px 10px #1e1e1e94"
-      } else if(chevron.classList.contains('fa-chevron-down')) {
+      } else if(!chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
       }
@@ -80,11 +80,11 @@ sortingLikes.addEventListener('click' ,() => {
       
       Lightbox.setMedia(mediaPhotographer)
       
-      chevron.classList.toggle('fa-chevron-up');
+      
       if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
-            chevron.classList.toggle('fa-chevron-down');
+            chevron.classList.remove('fa-chevron-up');
       }
 
 })
@@ -102,11 +102,10 @@ sortingTitre.addEventListener('click' ,() => {
       
       Lightbox.setMedia(mediaPhotographer)
 
-      chevron.classList.toggle('fa-chevron-up');
       if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
-            chevron.classList.toggle('fa-chevron-down');
+            chevron.classList.remove('fa-chevron-up');
       }
 })
 
@@ -123,10 +122,10 @@ sortingDate.addEventListener('click' ,() => {
      
       Lightbox.setMedia(mediaPhotographer)
 
-      chevron.classList.toggle('fa-chevron-up');
+     
       if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
-            chevron.classList.toggle('fa-chevron-down');
+            chevron.classList.remove('fa-chevron-up');
       }
 })

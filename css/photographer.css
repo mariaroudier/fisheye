@@ -196,6 +196,7 @@
 #sorting-popularity,#sorting-date, #sorting-titre {
     padding-left: 10px;
     padding-right: 50px;
+    cursor: pointer;
 }
 
 #sorting-titre{
