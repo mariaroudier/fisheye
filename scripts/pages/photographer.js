@@ -69,22 +69,25 @@ chevron.addEventListener('click' ,() => {
 })
       // par popularité
 sortingLikes.addEventListener('click' ,() => {
-      mediaPhotographer = mediaPhotographer.sort( (a,b) => {
-            return b.likes - a.likes
-      })
-      photosSection.innerHTML = ""
-      mediaPhotographer.forEach((content) => {
-            const photoCardDOM = content.getPhotoCardDOM();
-            photosSection.appendChild(photoCardDOM);
-      })
-      
-      Lightbox.setMedia(mediaPhotographer)
-      
-      
-      if(chevron.classList.contains('fa-chevron-up')) {
+      if(!chevron.classList.contains('fa-chevron-up')) {
+            sortingTitre.style.display = "block";
+            sortingDate.style.display = "block";
+            chevron.classList.toggle('fa-chevron-up');
+      }
+      else if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
             chevron.classList.remove('fa-chevron-up');
+            mediaPhotographer = mediaPhotographer.sort( (a,b) => {
+                  return b.likes - a.likes
+            })
+            photosSection.innerHTML = ""
+            mediaPhotographer.forEach((content) => {
+                  const photoCardDOM = content.getPhotoCardDOM();
+                  photosSection.appendChild(photoCardDOM);
+            })
+      
+            Lightbox.setMedia(mediaPhotographer)
       }
 
 })

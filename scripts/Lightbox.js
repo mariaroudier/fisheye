@@ -8,6 +8,7 @@ class Lightbox {
             // Montrer le lightbox
             const lightbox = document.getElementById('lightbox')
                   lightbox.style.display = "flex";
+                  document.getElementById('photos-section').style.display = "none"
             const displayedMedia = Lightbox.media[this.index]
                   document.getElementById('article-lightbox').appendChild(displayedMedia.DOMLightbox())
    
@@ -43,11 +44,13 @@ class Lightbox {
             document.querySelector('.cross').addEventListener('click',() => {
                   lightbox.style.display = "none";
                   document.getElementById('article-lightbox').innerHTML = ""
+                  document.getElementById('photos-section').style.display = "flex"
             })         // par Esc
             window.addEventListener('keydown',(e) => {
                   if(e.key == 'Esc' || e.key == 'Escape') {
                         lightbox.style.display = "none";
                         document.getElementById('article-lightbox').innerHTML = ""
+                        document.getElementById('photos-section').style.display = "flex"
                   }
             })
       }
