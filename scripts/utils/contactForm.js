@@ -69,6 +69,7 @@ form.addEventListener('submit',function(ev) {
     
 })
 
+// Fermer le modale
 window.addEventListener('keydown',(e) => {
     if(e.key == 'Esc' || e.key == 'Escape') {
         document.getElementById('contact_modal').style.display = "none";

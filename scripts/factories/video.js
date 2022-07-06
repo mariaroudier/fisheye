@@ -21,11 +21,12 @@ class Video {
         const images = document.createElement( 'video' );
             images.setAttribute( "src", this.video )
             images.setAttribute( "alt", this.title )
+            images.className = "image-file"
         const titleAndLikes = document.createElement( 'div' );
             titleAndLikes.id = "title-and-likes"
         const nameOfImage = document.createElement( 'p' );
             nameOfImage.textContent = this.title;
-            nameOfImage.id = "name-of-image"
+            nameOfImage.className = "name-of-image"
         const likesOfPhoto = document.createElement( 'div' );
             likesOfPhoto.id = "quantity-likes"
         const clickIcon = document.createElement ( 'a' )
@@ -36,7 +37,7 @@ class Video {
             heartIcon.id = "icon-heart"
         const numberLikes = document.createElement( 'p' );
              numberLikes.textContent = this.likes
-             numberLikes.id = "number-likes"
+             numberLikes.className = "number-likes"
 
         // les enfants
         article.appendChild(imageBox)
@@ -48,6 +49,12 @@ class Video {
                 likesOfPhoto.appendChild(clickIcon)
                     clickIcon.appendChild(heartIcon)
 
+        // Pour lightbox id
+        images.addEventListener('click', () => {
+            const idModel = new Lightbox(this.id)
+            console.log(this.id)
+        })
+        
         // ajoute +1 like par click et toogle le .class
         heartIcon.addEventListener('click', () => {
             numberLikes.classList.toggle('number-clicked');
@@ -61,14 +68,22 @@ class Video {
             }
             numberLikes.textContent = this.likes
         })
-
-        // Lancer lightbox par click
-        imageBox.addEventListener('click', () => {
-            document.getElementById('lightbox').style.display = "block"
-        })
-
-
         return article;
+    }
+
+    DOMLightbox () {
+        const boxOfLightbox = document.createElement('div')
+            boxOfLightbox.id = "box-lightbox"
+        const imgLightbox = document.createElement('video')
+            imgLightbox.setAttribute("src",this.video)
+            imgLightbox.setAttribute( "alt", this.title )
+            imgLightbox.id = "img-lightbox"
+        const imgTitle = document.createElement('span')
+            imgTitle.innerHTML = this.title
+            imgTitle.id = "img-title"
+        boxOfLightbox.appendChild(imgLightbox)
+        boxOfLightbox.appendChild(imgTitle)
+        return boxOfLightbox
     }
 }
 

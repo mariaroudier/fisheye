@@ -40,7 +40,7 @@ class Photo {
             heartIcon.id = "icon-heart"
         const numberLikes = document.createElement( 'p' );
              numberLikes.textContent = this.likes
-             numberLikes.classList = "number-likes"
+             numberLikes.className = "number-likes"
 
         // les enfants
         article.appendChild(imageBox)
@@ -55,7 +55,7 @@ class Photo {
         // Pour lightbox id
         images.addEventListener('click', () => {
             const idModel = new Lightbox(this.id)
-            
+            console.log(this.id)
         })
 
         // ajoute +1 like par click et toogle le .class
@@ -71,21 +71,23 @@ class Photo {
             }
             numberLikes.textContent = this.likes
         })
-
-
-
         return article;
-
     }
     
     DOMLightbox () {
+        const boxOfLightbox = document.createElement('div')
+            boxOfLightbox.id = "box-lightbox"
         const imgLightbox = document.createElement('img')
             imgLightbox.setAttribute("src",this.image)
             imgLightbox.setAttribute( "alt", this.title )
-        return imgLightbox
+            imgLightbox.id = "img-lightbox"
+        const imgTitle = document.createElement('span')
+            imgTitle.innerHTML = this.title
+            imgTitle.id = "img-title"
+        boxOfLightbox.appendChild(imgLightbox)
+        boxOfLightbox.appendChild(imgTitle)
+        return boxOfLightbox
     }
-
-
 }
 
     
