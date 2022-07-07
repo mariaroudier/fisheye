@@ -54,7 +54,7 @@ class Video {
             const idModel = new Lightbox(this.id)
             console.log(this.id)
         })
-        
+
         // ajoute +1 like par click et toogle le .class
         heartIcon.addEventListener('click', () => {
             numberLikes.classList.toggle('number-clicked');
@@ -80,7 +80,7 @@ class Video {
             imgLightbox.id = "img-lightbox"
         const imgTitle = document.createElement('span')
             imgTitle.innerHTML = this.title
-            imgTitle.id = "img-title"
+            imgTitle.id = "lightbox-title"
         boxOfLightbox.appendChild(imgLightbox)
         boxOfLightbox.appendChild(imgTitle)
         return boxOfLightbox

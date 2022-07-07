@@ -65,7 +65,7 @@ a {
 }
 
 #location-text{
-    font-size: 13px;
+    font-size: 15px;
     color:#901C1C;
     text-align: center;
     align-self: center;
@@ -74,7 +74,7 @@ a {
 }
 
 #tagline {
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     align-self: center;
     margin-block-start: 0;
@@ -83,7 +83,7 @@ a {
 
 #price{
     color: #757575;
-    font-size: 9px;
+    font-size: 11px;
     text-align: center;
     align-self: center;
     margin-block-start: 0;

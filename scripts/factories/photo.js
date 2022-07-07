@@ -83,7 +83,7 @@ class Photo {
             imgLightbox.id = "img-lightbox"
         const imgTitle = document.createElement('span')
             imgTitle.innerHTML = this.title
-            imgTitle.id = "img-title"
+            imgTitle.id = "lightbox-title"
         boxOfLightbox.appendChild(imgLightbox)
         boxOfLightbox.appendChild(imgTitle)
         return boxOfLightbox

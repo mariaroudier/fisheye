@@ -60,11 +60,12 @@ chevron.addEventListener('click' ,() => {
       if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "block";
             sortingDate.style.display = "block";
-            sortingLikes.style.paddingBottom = "0"
-            sorting.style.boxShadow = "0 10px 10px #1e1e1e94"
+            //sortingLikes.style.paddingBottom = "0"
+            sorting.style.boxShadow = "0 6px 10px #1e1e1e94"
       } else if(!chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
+            sorting.style.boxShadow = "none";
       }
 })
       // par popularité
@@ -73,10 +74,12 @@ sortingLikes.addEventListener('click' ,() => {
             sortingTitre.style.display = "block";
             sortingDate.style.display = "block";
             chevron.classList.toggle('fa-chevron-up');
+            sorting.style.boxShadow = "0 6px 10px #1e1e1e94"
       }
       else if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
+            sorting.style.boxShadow = "none"
             chevron.classList.remove('fa-chevron-up');
             mediaPhotographer = mediaPhotographer.sort( (a,b) => {
                   return b.likes - a.likes
@@ -108,6 +111,7 @@ sortingTitre.addEventListener('click' ,() => {
       if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
+            sorting.style.boxShadow = "none"
             chevron.classList.remove('fa-chevron-up');
       }
 })
@@ -129,6 +133,7 @@ sortingDate.addEventListener('click' ,() => {
       if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
+            sorting.style.boxShadow = "none"
             chevron.classList.remove('fa-chevron-up');
       }
 })
