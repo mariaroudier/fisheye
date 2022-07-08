@@ -5,14 +5,14 @@ class Lightbox {
             this.index = Lightbox.media.findIndex((elem)=> {
                   return elem.id == this.idMedia
             })
-            // Montrer le lightbox
+      // Montrer le lightbox
             const lightbox = document.getElementById('lightbox')
                   lightbox.style.display = "flex";
                   document.getElementById('photos-section').style.display = "none"
             const displayedMedia = Lightbox.media[this.index]
                   document.getElementById('article-lightbox').appendChild(displayedMedia.DOMLightbox())
    
-            // Changer le photo dans lightbox
+      // Changer le photo dans lightbox
             document.querySelector('.fa-chevron-right').addEventListener('click',() => {
                  this.index = (this.index + 1) % Lightbox.media.length
                  document.getElementById('article-lightbox').innerHTML = ""
@@ -24,7 +24,7 @@ class Lightbox {
                   document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox())
              }) 
              
-                  // par clavier
+            // par clavier
             window.addEventListener('keydown',(e) => {
                   if(e.key == 'ArrowLeft') {
                         this.index = (((this.index - 1) % Lightbox.media.length) + Lightbox.media.length) % Lightbox.media.length;
@@ -40,12 +40,12 @@ class Lightbox {
                   }
             })
 
-            // Fermer Lightbox
+      // Fermer Lightbox
             document.querySelector('.cross').addEventListener('click',() => {
                   lightbox.style.display = "none";
                   document.getElementById('article-lightbox').innerHTML = ""
                   document.getElementById('photos-section').style.display = "flex"
-            })         // par Esc
+            })    // par Esc
             window.addEventListener('keydown',(e) => {
                   if(e.key == 'Esc' || e.key == 'Escape') {
                         lightbox.style.display = "none";

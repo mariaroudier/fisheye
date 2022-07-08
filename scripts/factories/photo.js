@@ -18,29 +18,28 @@ class Photo {
         // DOM
         const article = document.createElement( 'article' );
             article.id = "article-photo"
-        const imageBox = document.createElement( 'a' );
+        const imageBox = document.createElement( 'div' );
             imageBox.id = "image-box";
-            imageBox.setAttribute( "href", "###" )
+            imageBox.setAttribute("aria-label", `${this.title}',closeup view'`)
+            imageBox.setAttribute("tabindex", "0")
         const images = document.createElement( 'img' );
             images.setAttribute( "src", this.image )
             images.setAttribute( "alt", this.title )
             images.className = "image-file"
         const titleAndLikes = document.createElement( 'div' );
             titleAndLikes.id = "title-and-likes"
-        const nameOfImage = document.createElement( 'p' );
+        const nameOfImage = document.createElement( 'h2' );
             nameOfImage.textContent = this.title;
             nameOfImage.className = "name-of-image"
         const likesOfPhoto = document.createElement( 'div' );
             likesOfPhoto.id = "quantity-likes"
-        const clickIcon = document.createElement ( 'a' )
-            clickIcon.id = "click-icon"
-            clickIcon.setAttribute("href", "###")
         const heartIcon = document.createElement ( 'i' )
             heartIcon.className = "fa-solid fa-heart"
             heartIcon.id = "icon-heart"
         const numberLikes = document.createElement( 'p' );
              numberLikes.textContent = this.likes
              numberLikes.className = "number-likes"
+             numberLikes.setAttribute("aria-label", "likes")
 
         // les enfants
         article.appendChild(imageBox)
@@ -49,8 +48,7 @@ class Photo {
             titleAndLikes.appendChild(nameOfImage)
             titleAndLikes.appendChild(likesOfPhoto)
                 likesOfPhoto.appendChild(numberLikes)
-                likesOfPhoto.appendChild(clickIcon)
-                    clickIcon.appendChild(heartIcon)
+                likesOfPhoto.appendChild(heartIcon)
 
         // Pour lightbox id
         images.addEventListener('click', () => {

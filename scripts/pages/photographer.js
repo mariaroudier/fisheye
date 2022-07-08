@@ -20,8 +20,10 @@ function displayData(photographers, media) {
                   document.getElementById('photographer-location').innerHTML = photographer.city + ', ' + photographer.country
                   document.getElementById('photographer-tagline').innerHTML = photographer.tagline
                   document.getElementById('photographer-photo').setAttribute("src", picture);
+                  document.getElementById('photographer-photo').setAttribute("alt", photographer.name);
                   document.getElementById('text-price').innerHTML = photographer.price + '€ / jour';
-                  document.getElementById('name-photographer').innerHTML = photographer.name;
+                  document.getElementById('name-photographer').innerHTML = `Contactez-moi \n
+                  ${photographer.name}`;
             }
       });
 

@@ -10,11 +10,11 @@ function photographerFactory(data) {
         
         //заголовок + фото
         const imageAndName = document.createElement( 'a' );
-            imageAndName.setAttribute( "aria-labelledby", name) ;
+            imageAndName.setAttribute( "aria-label", name) ;
             imageAndName.setAttribute("href","photographer.html" + "?" + id );
         const img = document.createElement( 'img' );
             img.setAttribute( "src", picture )
-            img.setAttribute( "alt", name )
+            img.setAttribute( "alt", "" )
         const h2 = document.createElement('h2');
             h2.textContent = name;
         
