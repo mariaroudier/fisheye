@@ -2,7 +2,9 @@
 <html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/164bc814ec.js" crossorigin="anonymous"></script>
@@ -25,13 +27,13 @@
       </div>
       <div class="photograph-header">
         <div id="info-photographer">
-          <h1 id="photographer-name"></h1>
-          <p id="photographer-location"></p>
-          <p id="photographer-tagline"></p>
+          <h1 id="photographer-name">En cours de remplissage</h1>
+          <p id="photographer-location">En cours de remplissage</p>
+          <p id="photographer-tagline">En cours de remplissage</p>
         </div>
         <button class="contact_button" aria-label="Contact me">Contactez-moi</button>
         <div id="box-photo">
-          <img id="photographer-photo" src="" alt=""/>
+          <img id="photographer-photo" src="assets/images" alt="En cours de remplissage"/>
         </div>
       </div>
       <div id="photograph-main">
@@ -49,12 +51,12 @@
         <div id="photos-section">
         </div>
         <div id="lightbox" aria-label="image closeup view">
-          <img class="cross" src="assets/icons/close_rouge.svg" role="button" aria-label="Close dialog" tabindex="0"/>
+          <img class="cross" src="assets/icons/close_rouge.svg" role="button" aria-label="Close dialog" tabindex="0" alt="Close dialog"/>
           <i class="fa-solid fa-chevron-left" role="link" aria-label="Previous page" tabindex="0"></i>
           <article id="article-lightbox">
           </article>
           <i class="fa-solid fa-chevron-right" role="link" aria-label="Next page" tabindex="0"></i>
-      </div>
+        </div>
       </div>
 
 
@@ -63,31 +65,31 @@
 			<div class="modal">
 				<header>
           <div id="header-text">
-            <h1 id="name-photographer"></h1>
+            <h1 id="name-photographer">En cours de remplissage</h1>
           </div>
-          <img id="cross-modale" class="cross" src="assets/icons/close.svg" role="button" aria-label="Close contact form" tabindex="0"/>
+          <img id="cross-modale" class="cross" src="assets/icons/close.svg" role="button" aria-label="Close contact form" tabindex="0" alt="Close contact form"/>
         </header>
    
 				<form id ="contact-form" name="contact" action="photographer.html" method="get" >
 					<div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom">
 						<label for="first">Prénom</label>
-            <input class="text-control" type="text" id="first" name="first" aria-label="First name" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+            <input class="text-control" type="text" id="first" name="first" placeholder="George" aria-label="First name" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
 
 					</div>
           <div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom">
             <label for="last">Nom</label>
-            <input class="text-control" type="text" id="last" name="last" aria-label="Last name"oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+            <input class="text-control" type="text" id="last" name="last" placeholder="Freeman" aria-label="Last name" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
           </div>
           <div class="formData" data-error="Veuillez entrer email correct">
             <label for="email">Email</label>
-            <input class="text-control" type="text" id="email" name="email" aria-label="Email"/>
+            <input class="text-control" type="text" id="email" name="email" placeholder="george.freeman@example.com" aria-label="Email"/>
           </div>
           <div class="formData" > 
             <label for="message">Votre message</label>
-            <textarea class="text-control text-area" type="text" id="message" name="message" aria-label="Your message"rows="3"></textarea>
+            <textarea class="text-control text-area" id="message" name="message" placeholder="Votre text" aria-label="Your message" rows="3"></textarea>
           </div>
           <br>
-          <input class="contact_button btn-submit" type="submit" value="Envoyer" role="button" aria-label="Send"/>
+          <input class="contact_button btn-submit" type="submit" value="Envoyer" aria-label="Send"/>
 				</form>
 			</div>
 		</div>

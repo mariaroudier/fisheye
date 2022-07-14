@@ -1,10 +1,9 @@
-@import url("photographer.css");
 
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
     padding-left: 100px;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-right: 100px;
     padding-bottom: 100px;
     margin-block-start: 0;
@@ -19,18 +18,19 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 70px;
 }
 
 h1 {
     color: #901C1C;
+    font-size: 30px;
 }
 
 a {
     text-decoration:none
 }
 .logo {
-    height: 50px;
+    height: 40px;
 }
 
 .photographer_section {
@@ -102,4 +102,121 @@ a {
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
     -o-border-radius: 100px;
+}
+
+/* Tablettes */
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 50px;
+    }
+
+    header {
+        flex-direction: row;
+        gap: 40px;
+        height: auto;
+    }
+
+    
+
+    .logo {
+        height: 30px;
+    }
+
+    header h1 {
+        font-size: 30px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+
+    }
+
+    .photographer_section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 70px;
+        gap: 30px;
+    }
+
+    .photographer_section article {
+        width: 300px;
+    }
+
+    .photographer_section article img {
+        width: 250px;
+        height: 250px;
+        border-radius: 125px;
+        -webkit-border-radius: 125px;
+        -moz-border-radius: 125px;
+        -ms-border-radius: 125px;
+        -o-border-radius: 125px;
+}
+
+    .photographer_section article h2 {
+        font-size: 26px;
+    }
+
+    #location-text, #tagline, #price {
+        font-size: 16px;
+    }
+
+
+
+}
+
+
+/* Mobiles */
+
+@media screen and (max-width: 414px) {
+    body {
+        padding: 30px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+    }
+
+    
+
+    .logo {
+        height: 25px;
+    }
+
+    header h1 {
+        font-size: 30px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+
+    }
+
+    .photographer_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 27px;
+        gap: 30px;
+    }
+
+    .photographer_section article {
+        width: auto;
+    }
+
+    .photographer_section article img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .photographer_section article h2 {
+        font-size: 26px;
+    }
+
+    #location-text, #tagline, #price {
+        font-size: 14px;
+    }
+
+
+
 }

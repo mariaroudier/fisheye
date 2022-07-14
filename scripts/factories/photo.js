@@ -89,7 +89,7 @@ class Photo {
             imgLightbox.setAttribute("src",this.image)
             imgLightbox.setAttribute( "alt", this.title )
             imgLightbox.id = "img-lightbox"
-        const imgTitle = document.createElement('span')
+        const imgTitle = document.createElement('h2')
             imgTitle.innerHTML = this.title
             imgTitle.id = "lightbox-title"
         boxOfLightbox.appendChild(imgLightbox)

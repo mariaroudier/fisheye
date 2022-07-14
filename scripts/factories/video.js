@@ -88,7 +88,7 @@ class Video {
             imgLightbox.setAttribute( "alt", this.title )
             imgLightbox.id = "img-lightbox"
             imgLightbox.setAttribute("controls","true")
-        const imgTitle = document.createElement('span')
+        const imgTitle = document.createElement('h2')
             imgTitle.innerHTML = this.title
             imgTitle.id = "lightbox-title"
         boxOfLightbox.appendChild(imgLightbox)
