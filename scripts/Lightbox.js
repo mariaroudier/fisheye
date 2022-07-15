@@ -14,75 +14,67 @@ class Lightbox {
                   document.getElementById('article-lightbox').appendChild(displayedMedia.DOMLightbox());
    
       // Changer le photo dans lightbox
-            //next
-
-                  // par Enter
+            //next image
+            const nextImage = () => {
+                  this.index = (this.index + 1) % Lightbox.media.length;
+                  document.getElementById('article-lightbox').innerHTML = "";
+                  document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox());
+            }
+            
             document.querySelector('.fa-chevron-right').addEventListener("keyup", (e) => {
                   if(e.key === 'Enter') {
-                        this.index = (this.index + 1) % Lightbox.media.length;
-                        document.getElementById('article-lightbox').innerHTML = "";
-                        document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox());
+                        nextImage();
                   }
             })
-                  // par arrow
             window.addEventListener('keydown',(e) => {
                   if(e.key == 'ArrowRight') {
-                        this.index = (this.index + 1) % Lightbox.media.length;
-                        document.getElementById('article-lightbox').innerHTML = "";
-                        document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox());
+                        nextImage();
                   }
             })
             document.querySelector('.fa-chevron-right').addEventListener('click',() => {
-                 this.index = (this.index + 1) % Lightbox.media.length;
-                 document.getElementById('article-lightbox').innerHTML = "";
-                 document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox());
+                  nextImage();
             }) 
 
-            // previous
-                  // par Enter
-            document.querySelector('.fa-chevron-left').addEventListener("keyup", (e) => {
-                  if(e.key === 'Enter') {
-                        this.index = (((this.index - 1) % Lightbox.media.length) + Lightbox.media.length) % Lightbox.media.length;
-                        document.getElementById('article-lightbox').innerHTML = "";
-                        document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox());
-                  }
-            })
-            document.querySelector('.fa-chevron-left').addEventListener('click',() => {
+            // previous image
+            const previousImage = () => {
                   this.index = (((this.index - 1) % Lightbox.media.length) + Lightbox.media.length) % Lightbox.media.length;
                   document.getElementById('article-lightbox').innerHTML = "";
                   document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox());
+            }
+
+            document.querySelector('.fa-chevron-left').addEventListener("keyup", (e) => {
+                  if(e.key === 'Enter') {
+                        previousImage();
+                  }
+            })
+            document.querySelector('.fa-chevron-left').addEventListener('click',() => {
+                  previousImage();
              }) 
-             
-                  // par arrow
             window.addEventListener('keydown',(e) => {
                   if(e.key == 'ArrowLeft') {
-                        this.index = (((this.index - 1) % Lightbox.media.length) + Lightbox.media.length) % Lightbox.media.length;
-                        document.getElementById('article-lightbox').innerHTML = "";
-                        document.getElementById('article-lightbox').appendChild(Lightbox.media[this.index].DOMLightbox())
+                        previousImage();
                   }
             })
 
       // Fermer Lightbox
-                  // par Enter
-            document.querySelector('.cross').addEventListener("keyup", (e) => {
-                  if(e.key === 'Enter') {
-                        lightbox.style.display = "none";
-                        document.getElementById('article-lightbox').innerHTML = "";
-                        document.getElementById('photos-section').style.display = "flex";
-                  }
-            })
-                  // par Esc
-            window.addEventListener('keydown',(e) => {
-                  if(e.key == 'Esc' || e.key == 'Escape') {
-                        lightbox.style.display = "none";
-                        document.getElementById('article-lightbox').innerHTML = "";
-                        document.getElementById('photos-section').style.display = "flex";
-                  }
-            })
-            document.querySelector('.cross').addEventListener('click',() => {
+            const toCloseLightbox = () => {
                   lightbox.style.display = "none";
                   document.getElementById('article-lightbox').innerHTML = "";
                   document.getElementById('photos-section').style.display = "flex";
+            }
+              
+            document.querySelector('.cross').addEventListener("keyup", (e) => {
+                  if(e.key === 'Enter') {
+                        toCloseLightbox();
+                  }
+            })
+            window.addEventListener('keydown',(e) => {
+                  if(e.key == 'Esc' || e.key == 'Escape') {
+                        toCloseLightbox();
+                  }
+            })
+            document.querySelector('.cross').addEventListener('click',() => {
+                  toCloseLightbox();
             })    
                  
       }

@@ -51,21 +51,19 @@ class Video {
                 likesOfPhoto.appendChild(heartIcon)
 
         // Pour lightbox id
-
         images.addEventListener("keyup", (e) => {
             if(e.key === 'Enter') {
                 // eslint-disable-next-line no-undef
                 new Lightbox(this.id)
             }
         })
-
         images.addEventListener('click', () => {
             // eslint-disable-next-line no-undef
             new Lightbox(this.id)
         })
 
-        // ajoute +1 like par click et toogle le .class
-        heartIcon.addEventListener('click', () => {
+        // Ajoute +1 like par click et toogle le .class
+        const toLike = () => {
             numberLikes.classList.toggle('number-clicked');
     
             if(numberLikes.classList.contains('number-clicked')) {
@@ -76,7 +74,17 @@ class Video {
                 document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)-1
             }
             numberLikes.textContent = this.likes
+        }
+        
+        heartIcon.addEventListener("keyup", (e) => {
+            if(e.key === 'Enter') {
+                toLike();
+            }
         })
+        heartIcon.addEventListener('click', () => {
+            toLike()
+        })
+
         return article;
     }
 

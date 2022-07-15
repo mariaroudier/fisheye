@@ -10,8 +10,7 @@ class Photo {
         this.date = data.date
         this.price = data.price
         this.image = `assets/images/${data.photographerId}/${data.image}`;
-        document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)+this.likes
-
+        document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)+this.likes;
     }
 
     getPhotoCardDOM() {
@@ -60,14 +59,13 @@ class Photo {
                 new Lightbox(this.id)
             }
         })
-
         images.addEventListener('click', () => {
             // eslint-disable-next-line no-undef
             new Lightbox(this.id)
         })
 
-        // ajoute ++like par click et toogle .class
-        heartIcon.addEventListener('click', () => {
+        // Ajoute ++like par click et toogle .class
+        const toLike = () => {
             numberLikes.classList.toggle('number-clicked');
     
             if(numberLikes.classList.contains('number-clicked')) {
@@ -78,7 +76,16 @@ class Photo {
                 document.getElementById('sum-likes').textContent = Number(document.getElementById('sum-likes').textContent)-1
             }
             numberLikes.textContent = this.likes
+        }
+        heartIcon.addEventListener("keyup", (e) => {
+            if(e.key === 'Enter') {
+                toLike();
+            }
         })
+        heartIcon.addEventListener('click', () => {
+            toLike()
+        })
+
         return article;
     }
     

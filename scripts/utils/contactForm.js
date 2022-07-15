@@ -12,8 +12,6 @@ document.querySelector('.contact_button').addEventListener('click',() => {
     document.getElementById('contact_modal').style.display = "block";
 })
 
-
-
 // Verification de dennées dans les champs
 form.addEventListener('submit',function(ev) {
     // on arrete l'envoy de forme par default

@@ -18,13 +18,6 @@
       </a>
     </header>
     <main id="main">
-      <div id="info-additional">
-          <div id="all-likes">
-            <span id="sum-likes"></span>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        <span id="text-price"></span>
-      </div>
       <div class="photograph-header">
         <div id="info-photographer">
           <h1 id="photographer-name">En cours de remplissage</h1>
@@ -39,11 +32,9 @@
       <div id="photograph-main">
           <div id="sorting">
             <span id="sorting-text">Trier par</span>
-            <ul id="select-sorting" role="combobox" aria-label="Order by" aria-expanded="false" aria-haspopup="listbox" aria-activedescendant="sorting-popularity">
-              <li class="sorting-methode" id="sorting-popularity">
-                <span id="sort-pop-text" role="listbox" tabindex="0">Popularité</span>
-                <i id="chevron-up-down" class="fa-solid fa-chevron-down" role="button" tabindex="0"></i>
-              </li>
+            <ul id="select-sorting" role="tablist" aria-label="Order by" aria-expanded="false" aria-haspopup="listbox" aria-activedescendant="sorting-popularity">
+              <i id="chevron-up-down" class="fa-solid fa-chevron-down" role="button" tabindex="0"></i>
+              <li class="sorting-methode" id="sorting-popularity" tabindex="0">Popularité</li>
               <li class="sorting-methode" id="sorting-date" tabindex="0">Date</li>
               <li class="sorting-methode" id="sorting-titre" tabindex="0">Titre</li>
             </ul>
@@ -58,8 +49,13 @@
           <i class="fa-solid fa-chevron-right" role="link" aria-label="Next page" tabindex="0"></i>
         </div>
       </div>
-
-
+        <div id="info-additional">
+          <div id="all-likes">
+            <span id="sum-likes"></span>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <span id="text-price"></span>
+        </div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
