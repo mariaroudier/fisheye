@@ -56,16 +56,20 @@ const sortingLikes = document.getElementById('sorting-popularity');
 const sortingDate = document.getElementById('sorting-date');
 
 // Apparaitre le liste de sorting
-const toShowSortingList = () => {
+const toShowOrCloseSortingList = () => {
       if(!chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "block";
             sortingDate.style.display = "block";
+            sortingLikes.style.display = "block";
             sorting.style.boxShadow = "0 6px 10px #1e1e1e94";
+            sortingDate.style.borderTop = "1px white solid";
+            sortingTitre.style.borderTop = "1px white solid";
             sorting.setAttribute("aria-expanded", "true");
             chevron.classList.toggle('fa-chevron-up');
       } else if(chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "none";
             sortingDate.style.display = "none";
+            sortingLikes.style.display = "none";
             sorting.style.boxShadow = "none";
             sorting.setAttribute("aria-expanded", "false")
       }
@@ -73,19 +77,22 @@ const toShowSortingList = () => {
       
       chevron.addEventListener("keyup", (e) => {
             if(e.key === 'Enter') {
-                  toShowSortingList();
+                  toShowOrCloseSortingList();
             }
       })
       chevron.addEventListener('click' ,() => {
-            toShowSortingList();
+            toShowOrCloseSortingList();
       })
 
+      
 // Sorting par popularité
 const toSortByPopularity = () => {
       if(!chevron.classList.contains('fa-chevron-up')) {
             sortingTitre.style.display = "block";
             sortingDate.style.display = "block";
             sorting.style.boxShadow = "0 6px 10px #1e1e1e94"
+            sortingDate.style.borderTop = "1px white solid";
+            sortingTitre.style.borderTop = "1px white solid";
             sorting.setAttribute("aria-expanded", "true")
             chevron.classList.toggle('fa-chevron-up');
       }
@@ -145,6 +152,7 @@ const toSortByTitre = () => {
             sortingDate.style.display = "block";
             sorting.style.boxShadow = "0 6px 10px #1e1e1e94";
             sortingTitre.style.borderTop = "1px white solid";
+            sortingDate.style.borderTop = "1px white solid";
             sorting.setAttribute("aria-expanded", "true");
             chevron.classList.toggle('fa-chevron-up');
       }
@@ -185,7 +193,8 @@ const toSortByDate = () => {
       else if(!chevron.classList.contains('fa-chevron-up')) {
             sortingLikes.style.display = "block";
             sortingTitre.style.display = "block";
-            sortingDate.style.borderTop = "1px white solid"
+            sortingDate.style.borderTop = "1px white solid";
+            sortingTitre.style.borderTop = "1px white solid";
             sorting.style.boxShadow = "0 6px 10px #1e1e1e94";
             sorting.setAttribute("aria-expanded", "true");
             chevron.classList.toggle('fa-chevron-up');
@@ -201,4 +210,15 @@ const toSortByDate = () => {
       sortingDate.addEventListener('click' ,(e) => {
             toSortByDate();
             sorting.setAttribute("aria-activedescendant",e.target.id)
+      })
+
+      window.addEventListener('click', e => { // при клике в любом месте окна браузера
+            const target = e.target // находим элемент, на котором был клик
+            if (!target.closest('#chevron-up-down') && !target.closest('#sorting-popularity') && !target.closest('#sorting-date') && !target.closest('#sorting-titre')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
+                  chevron.classList.remove('fa-chevron-up') // то закрываем окно навигации, удаляя активный класс
+                  sortingTitre.style.display = "none";
+                  sortingDate.style.display = "none";
+                  sorting.style.boxShadow = "none"
+                  sorting.setAttribute("aria-expanded", "false")
+            }
       })

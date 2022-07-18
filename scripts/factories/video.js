@@ -22,6 +22,10 @@ class Video {
             images.setAttribute( "src", this.video );
             images.setAttribute( "alt", this.title );
             images.setAttribute("tabindex", "0");
+            images.setAttribute("playsinline", "true");
+            images.setAttribute("loop", "true");
+            images.setAttribute("preload", "auto");
+            images.setAttribute("type", "video/mp4");
             images.setAttribute("aria-label", `${this.title}',closeup view'`);
         const titleAndLikes = document.createElement( 'div' );
             titleAndLikes.id = "title-and-likes";
@@ -75,7 +79,7 @@ class Video {
             }
             numberLikes.textContent = this.likes
         }
-        
+
         heartIcon.addEventListener("keyup", (e) => {
             if(e.key === 'Enter') {
                 toLike();
@@ -96,6 +100,10 @@ class Video {
             imgLightbox.setAttribute( "alt", this.title )
             imgLightbox.id = "img-lightbox"
             imgLightbox.setAttribute("controls","true")
+            //imgLightbox.setAttribute("playsinline", "true");
+           // imgLightbox.setAttribute("loop", "true");
+            //imgLightbox.setAttribute("preload", "preload");
+            //imgLightbox.setAttribute("type", "video/mp4");
         const imgTitle = document.createElement('h2')
             imgTitle.innerHTML = this.title
             imgTitle.id = "lightbox-title"
