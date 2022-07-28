@@ -212,10 +212,10 @@ const toSortByDate = () => {
             sorting.setAttribute("aria-activedescendant",e.target.id)
       })
 
-      window.addEventListener('click', e => { // при клике в любом месте окна браузера
-            const target = e.target // находим элемент, на котором был клик
+      window.addEventListener('click', e => {
+            const target = e.target 
             if (!target.closest('#chevron-up-down') && !target.closest('#sorting-popularity') && !target.closest('#sorting-date') && !target.closest('#sorting-titre')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
-                  chevron.classList.remove('fa-chevron-up') // то закрываем окно навигации, удаляя активный класс
+                  chevron.classList.remove('fa-chevron-up')
                   sortingTitre.style.display = "none";
                   sortingDate.style.display = "none";
                   sorting.style.boxShadow = "none"

@@ -95,7 +95,9 @@ class Photo {
         const imgLightbox = document.createElement('img')
             imgLightbox.setAttribute("src",this.image)
             imgLightbox.setAttribute( "alt", this.title )
+            imgLightbox.setAttribute( "aria-label", this.title )
             imgLightbox.id = "img-lightbox"
+            imgLightbox.setAttribute( "tabindex", "0")
         const imgTitle = document.createElement('h2')
             imgTitle.innerHTML = this.title
             imgTitle.id = "lightbox-title"

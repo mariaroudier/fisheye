@@ -3,13 +3,19 @@ const contactModal = document.getElementById('contact_modal')
 const form = document.getElementById('contact-form')
 const inputIn = document.querySelectorAll(".text-control")
 const formData = document.querySelectorAll(".formData");
+const  focusableElements = 'button, input, textarea, [tabindex]:not([tabindex="-1"])';
+const firstFocusableElement = contactModal.querySelectorAll(focusableElements)[0];
+const focusableContent = contactModal.querySelectorAll(focusableElements);
+const lastFocusableElement = focusableContent[focusableContent.length - 1];
 let firstChecked = true
 let lastChecked = true
 let emailChecked = true
 
 
+
 document.querySelector('.contact_button').addEventListener('click',() => {
     document.getElementById('contact_modal').style.display = "block";
+    firstFocusableElement.focus();
 })
 
 // Verification de dennées dans les champs
@@ -21,18 +27,22 @@ form.addEventListener('submit',function(ev) {
             if (elem.value.length < 2) {
             firstChecked = false
             formData[0].dataset.errorVisible = "true"
+            formData[0].setAttribute("aria-invalid", "true")
             } else {
             firstChecked = true
             formData[0].dataset.errorVisible = "false"
+            formData[0].setAttribute("aria-invalid", "false") 
             }
         }
         else if (elem.id == 'last') {                     
             if (elem.value.length < 2) {
             lastChecked = false
             formData[1].dataset.errorVisible = "true"
+            formData[1].setAttribute("aria-invalid", "true") 
             } else {                                        
                 lastChecked = true
                 formData[1].dataset.errorVisible = "false"
+                formData[1].setAttribute("aria-invalid", "false") 
             }
 
         }
@@ -41,14 +51,18 @@ form.addEventListener('submit',function(ev) {
             if (elem.value.match(validRegex)) {
             emailChecked = true
             formData[2].dataset.errorVisible = "false"
+            formData[2].setAttribute("aria-invalid", "true") 
             } else {
             emailChecked = false
             formData[2].dataset.errorVisible = "true"
+            formData[2].setAttribute("aria-invalid", "false") 
             }
         }
         //disable error warning
         formData.forEach(elem => elem.addEventListener("click", () => {
             elem.dataset.errorVisible = "false";
+            formData.setAttribute("aria-invalid", "false") 
+
         }))
         
         inputIn.forEach(elem => elem.addEventListener("click", () => {
@@ -73,7 +87,23 @@ window.addEventListener('keydown',(e) => {
         document.getElementById('contact_modal').style.display = "none";
     }
 })
-
 document.getElementById('cross-modale').addEventListener('click', () => {
     document.getElementById('contact_modal').style.display = "none"
 })
+
+document.addEventListener('keydown', function(e) {
+    let isTabPressed = e.key === 'Tab';
+  
+    if (!isTabPressed) {
+        return;
+    }
+  
+    else { // if tab key is pressed
+      if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+      }
+    }
+});
+  
+firstFocusableElement.focus();

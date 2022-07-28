@@ -100,10 +100,7 @@ class Video {
             imgLightbox.setAttribute( "alt", this.title )
             imgLightbox.id = "img-lightbox"
             imgLightbox.setAttribute("controls","true")
-            //imgLightbox.setAttribute("playsinline", "true");
-           // imgLightbox.setAttribute("loop", "true");
-            //imgLightbox.setAttribute("preload", "preload");
-            //imgLightbox.setAttribute("type", "video/mp4");
+            imgLightbox.setAttribute( "aria-label", this.title )
         const imgTitle = document.createElement('h2')
             imgTitle.innerHTML = this.title
             imgTitle.id = "lightbox-title"

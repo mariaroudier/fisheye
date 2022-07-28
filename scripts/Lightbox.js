@@ -9,7 +9,9 @@ class Lightbox {
       // Montrer le lightbox
             const lightbox = document.getElementById('lightbox')
                   lightbox.style.display = "flex";
-                  document.getElementById('photos-section').style.display = "none";
+                  document.getElementById('photograph-main').style.display = "none";
+                  document.querySelector('.photograph-header').style.display = "none";
+                  document.getElementById('info-additional').style.display = "none";
             const displayedMedia = Lightbox.media[this.index];
                   document.getElementById('article-lightbox').appendChild(displayedMedia.DOMLightbox());
    
@@ -60,7 +62,9 @@ class Lightbox {
             const toCloseLightbox = () => {
                   lightbox.style.display = "none";
                   document.getElementById('article-lightbox').innerHTML = "";
-                  document.getElementById('photos-section').style.display = "flex";
+                  document.getElementById('photograph-main').style.display = "block";
+                  document.querySelector('.photograph-header').style.display = "flex";
+                  document.getElementById('info-additional').style.display = "flex";
             }
               
             document.querySelector('.cross').addEventListener("keyup", (e) => {

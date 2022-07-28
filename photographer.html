@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/164bc814ec.js" crossorigin="anonymous"></script>
-    <title>Fisheye - photographe </title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <link href="css/style.css" rel="stylesheet" type="text/css" />
+      <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/164bc814ec.js" crossorigin="anonymous"></script>
+      <title>Fisheye - photographe </title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   </head>
   <body>
@@ -34,28 +34,28 @@
             <span id="sorting-text">Trier par</span>
             <ul id="select-sorting" role="group" aria-label="Order by" aria-expanded="false" aria-haspopup="listbox" aria-activedescendant="sorting-popularity">
               <i id="chevron-up-down" class="fa-solid fa-chevron-down" role="button" tabindex="0"></i>
-              <li class="sorting-methode" id="sorting-popularity" tabindex="0">Popularité</li>
-              <li class="sorting-methode" id="sorting-date" tabindex="0">Date</li>
-              <li class="sorting-methode" id="sorting-titre" tabindex="0">Titre</li>
+              <li class="sorting-methode" id="sorting-popularity" aria-label="Popularité" tabindex="0">Popularité</li>
+              <li class="sorting-methode" id="sorting-date" aria-label="Date" tabindex="0">Date</li>
+              <li class="sorting-methode" id="sorting-titre" aria-label="Titre" tabindex="0">Titre</li>
             </ul>
           </div>
         <div id="photos-section">
         </div>
-        <div id="lightbox" aria-label="image closeup view">
+      </div>
+      <div id="lightbox" aria-label="image closeup view">
           <img class="cross" src="assets/icons/close_rouge.svg" role="button" aria-label="Close dialog" tabindex="0" alt="Close dialog"/>
           <i class="fa-solid fa-chevron-left" role="link" aria-label="Previous page" tabindex="0"></i>
           <article id="article-lightbox">
           </article>
           <i class="fa-solid fa-chevron-right" role="link" aria-label="Next page" tabindex="0"></i>
-        </div>
       </div>
-        <div id="info-additional">
+      <div id="info-additional">
           <div id="all-likes">
             <span id="sum-likes"></span>
             <i class="fa-solid fa-heart"></i>
           </div>
           <span id="text-price"></span>
-        </div>
+      </div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -63,29 +63,29 @@
           <div id="header-text">
             <h1 id="name-photographer">En cours de remplissage</h1>
           </div>
-          <img id="cross-modale" class="cross" src="assets/icons/close.svg" role="button" aria-label="Close contact form" tabindex="0" alt="Close contact form"/>
+          <img id="cross-modale" class="cross focusableElements" src="assets/icons/close.svg" role="button" aria-label="Close contact form" tabindex="0" alt="Close contact form"/>
         </header>
    
 				<form id ="contact-form" name="contact" action="photographer.html" method="get" >
 					<div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom">
 						<label for="first">Prénom</label>
-            <input class="text-control" type="text" id="first" name="first" placeholder="George" aria-label="First name" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+            <input class="text-control focusableElements" type="text" id="first" name="first" placeholder="George" aria-label="First name" aria-required="true" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}" autofocus="autofocus"/>
 
 					</div>
           <div class="formData" data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom">
             <label for="last">Nom</label>
-            <input class="text-control" type="text" id="last" name="last" placeholder="Freeman" aria-label="Last name" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
+            <input class="text-control focusableElements" type="text" id="last" name="last" placeholder="Freeman" aria-label="Last name" aria-required="true" oninput="if(/[^a-zA-Z]/.test(this.value)){let Selection = this.selectionStart-1;this.value=this.value.replace(/[^a-zA-Z]/g,'');this.setSelectionRange(Selection, Selection);}"/>
           </div>
           <div class="formData" data-error="Veuillez entrer email correct">
             <label for="email">Email</label>
-            <input class="text-control" type="text" id="email" name="email" placeholder="george.freeman@example.com" aria-label="Email"/>
+            <input class="text-control focusableElements" type="text" id="email" name="email" placeholder="george.freeman@example.com" aria-label="Email" aria-required="true"/>
           </div>
           <div class="formData" > 
             <label for="message">Votre message</label>
-            <textarea class="text-control text-area" id="message" name="message" placeholder="Votre text" aria-label="Your message" rows="3"></textarea>
+            <textarea class="text-control text-area focusableElements" id="message" name="message" placeholder="Votre text" aria-label="Your message" rows="3"></textarea>
           </div>
           <br>
-          <input class="contact_button btn-submit" type="submit" value="Envoyer" aria-label="Send"/>
+          <input class="contact_button btn-submit focusableElements" role="button" type="submit" value="Envoyer" aria-label="Send"/>
 				</form>
 			</div>
 		</div>

@@ -8,7 +8,6 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         
-        //заголовок + фото
         const imageAndName = document.createElement( 'a' );
             imageAndName.setAttribute( "aria-label", name) ;
             imageAndName.setAttribute("href","photographer.html" + "?" + id );
@@ -18,7 +17,6 @@ function photographerFactory(data) {
         const h2 = document.createElement('h2');
             h2.textContent = name;
         
-        // остальное
         const location = document.createElement( 'p' )
             location.textContent = city + ", " + country
             location.id = "location-text"
@@ -29,13 +27,14 @@ function photographerFactory(data) {
             priceP.textContent = price + " /jour ";
             priceP.id = "price"
 
-        // добавление элементов-детей
+        
         article.appendChild(imageAndName);
          imageAndName.appendChild(img);
             imageAndName.appendChild(h2);
         article.appendChild(location);
         article.appendChild(taglineP);
         article.appendChild(priceP);
+
 
         
 
