@@ -14,7 +14,7 @@ let emailChecked = true
 
 
 document.querySelector('.contact_button').addEventListener('click',() => {
-    document.getElementById('contact_modal').style.display = "block";
+    document.getElementById('contact_modal').style.display = "flex";
     firstFocusableElement.focus();
 })
 

@@ -6,7 +6,7 @@ class Lightbox {
             this.index = Lightbox.media.findIndex((elem)=> {
                   return elem.id == this.idMedia
             })
-      // Montrer le lightbox
+            // Montrer le lightbox
             const lightbox = document.getElementById('lightbox')
                   lightbox.style.display = "flex";
                   document.getElementById('photograph-main').style.display = "none";
@@ -15,7 +15,7 @@ class Lightbox {
             const displayedMedia = Lightbox.media[this.index];
                   document.getElementById('article-lightbox').appendChild(displayedMedia.DOMLightbox());
    
-      // Changer le photo dans lightbox
+            // Changer le photo dans lightbox
             //next image
             const nextImage = () => {
                   this.index = (this.index + 1) % Lightbox.media.length;
@@ -58,7 +58,7 @@ class Lightbox {
                   }
             })
 
-      // Fermer Lightbox
+            // Fermer Lightbox
             const toCloseLightbox = () => {
                   lightbox.style.display = "none";
                   document.getElementById('article-lightbox').innerHTML = "";
