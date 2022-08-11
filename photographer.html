@@ -33,7 +33,7 @@
           <div id="sorting">
             <span id="sorting-text">Trier par</span>
             <ul id="select-sorting" role="group" aria-label="Order by" aria-expanded="false" aria-haspopup="listbox" aria-activedescendant="sorting-popularity">
-              <i id="chevron-up-down" class="fa-solid fa-chevron-down" role="button" tabindex="0"></i>
+              <span id="chevron-up-down" class="fa-solid fa-chevron-down" role="button" tabindex="0"></span>
               <li class="sorting-methode" id="sorting-popularity" aria-label="Popularité" tabindex="0">Popularité</li>
               <li class="sorting-methode" id="sorting-date" aria-label="Date" tabindex="0">Date</li>
               <li class="sorting-methode" id="sorting-titre" aria-label="Titre" tabindex="0">Titre</li>
@@ -44,15 +44,15 @@
       </div>
       <div id="lightbox" aria-label="image closeup view">
           <img class="cross" src="assets/icons/close_rouge.svg" role="button" aria-label="Close dialog" tabindex="0" alt="Close dialog"/>
-          <i class="fa-solid fa-chevron-left" role="link" aria-label="Previous page" tabindex="0"></i>
+          <span class="fa-solid fa-chevron-left" role="link" aria-label="Previous page" tabindex="0"></span>
           <article id="article-lightbox">
           </article>
-          <i class="fa-solid fa-chevron-right" role="link" aria-label="Next page" tabindex="0"></i>
+          <span class="fa-solid fa-chevron-right" role="link" aria-label="Next page" tabindex="0"></span>
       </div>
       <div id="info-additional">
           <div id="all-likes">
             <span id="sum-likes"></span>
-            <i class="fa-solid fa-heart"></i>
+            <span class="fa-solid fa-heart"></span>
           </div>
           <span id="text-price"></span>
       </div>
@@ -89,7 +89,7 @@
 				</form>
 			</div>
 		</div>
-    <script src="scripts/Lightbox.js"></script>
+    <script src="scripts/factories/Lightbox.js"></script>
     <script src="scripts/factories/photo.js"></script>
     <script src="scripts/factories/video.js"></script>
     <script src="scripts/factories/MediaFactory.js"></script>

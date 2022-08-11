@@ -61,7 +61,6 @@ form.addEventListener('submit',function(ev) {
         //disable error warning
         formData.forEach(elem => elem.addEventListener("click", () => {
             elem.dataset.errorVisible = "false";
-            formData.setAttribute("aria-invalid", "false") 
 
         }))
         

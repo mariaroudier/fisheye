@@ -212,13 +212,4 @@ const toSortByDate = () => {
             sorting.setAttribute("aria-activedescendant",e.target.id)
       })
 
-      window.addEventListener('click', e => {
-            const target = e.target 
-            if (!target.closest('#chevron-up-down') && !target.closest('#sorting-popularity') && !target.closest('#sorting-date') && !target.closest('#sorting-titre')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
-                  chevron.classList.remove('fa-chevron-up')
-                  sortingTitre.style.display = "none";
-                  sortingDate.style.display = "none";
-                  sorting.style.boxShadow = "none"
-                  sorting.setAttribute("aria-expanded", "false")
-            }
-      })
+     

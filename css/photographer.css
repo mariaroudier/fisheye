@@ -170,6 +170,7 @@
     padding: 10px;
     margin: 0;
     gap:14px;
+    padding-top: 0;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -188,8 +189,8 @@
 }
 #chevron-up-down{
     position: absolute;
-    right: 13px;
-    top: 24px;
+    right: 15px;
+    top: 16px;
 }
 
 #sorting-date, #sorting-titre {
@@ -577,6 +578,7 @@ form input:focus , textarea:focus{
         padding: 7px;
         left: 140px;
         width: 132px;
+        padding-top: 10px;
     }
 
     #sorting-popularity, #sorting-date, #sorting-titre {
@@ -586,7 +588,7 @@ form input:focus , textarea:focus{
 
     #chevron-up-down {
         right: 8px;
-        top: 16px;
+        top: 18px;
     }
 
     #article-photo {
@@ -745,6 +747,7 @@ form input:focus , textarea:focus{
         padding: 9px;
         gap: 5px;
         width: 120px;
+        padding-top: 10;
     }
 
     #sorting-popularity {
@@ -762,6 +765,7 @@ form input:focus , textarea:focus{
 
     #chevron-up-down {
         right:11px;
+        top: 16px;
     }
 
     .name-of-image {
