@@ -16,9 +16,9 @@ class Photo {
     getPhotoCardDOM() {
         // DOM
         const article = document.createElement( 'article' );
-            article.id = "article-photo";
+            article.classList = "article-photo";
         const imageBox = document.createElement( 'div' );
-            imageBox.id = "image-box";
+            imageBox.classList = "image-box";
         const images = document.createElement( 'img' );
             images.className = "image-file";
             images.setAttribute( "src", this.image );
@@ -32,7 +32,7 @@ class Photo {
             nameOfImage.className = "name-of-image";
         const likesOfPhoto = document.createElement( 'div' );
             likesOfPhoto.id = "quantity-likes";
-        const heartIcon = document.createElement ( 'i' );
+        const heartIcon = document.createElement ( 'span' );
             heartIcon.className = "fa-solid fa-heart";
             heartIcon.id = "icon-heart";
             heartIcon.setAttribute("tabindex", "0");

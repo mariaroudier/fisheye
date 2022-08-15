@@ -1,7 +1,12 @@
+const searchParams = new URLSearchParams(document.location.search)
+const id = searchParams.get("id")
+console.log(id)
 
-const paramsString = document.location.search.substring(1);
+
+// console.log(url)
 let mediaPhotographer = []
 const photosSection = document.getElementById('photos-section')
+
 
 // Obtenir les données
 async function getPhotographers() {
@@ -15,7 +20,7 @@ function displayData(photographers, media) {
 
       photographers.forEach((photographer) => {
             const picture = `assets/photographers/${photographer.portrait}`;
-            if (photographer.id == paramsString) {
+            if (photographer.id == id) {
                   document.getElementById('photographer-name').innerHTML = photographer.name
                   document.getElementById('photographer-location').innerHTML = photographer.city + ', ' + photographer.country
                   document.getElementById('photographer-tagline').innerHTML = photographer.tagline
@@ -27,7 +32,7 @@ function displayData(photographers, media) {
       });
 
       media.forEach((content) => {
-            if (content.photographerId == paramsString) {
+            if (content.photographerId == id) {
                   // eslint-disable-next-line no-undef
                   const photoModel = new MediaFactory(content);
                   const photoCardDOM = photoModel.getPhotoCardDOM();

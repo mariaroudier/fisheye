@@ -89,6 +89,11 @@ window.addEventListener('keydown',(e) => {
 document.getElementById('cross-modale').addEventListener('click', () => {
     document.getElementById('contact_modal').style.display = "none"
 })
+document.getElementById('cross-modale').addEventListener("keyup", (e) => {
+    if(e.key === 'Enter') {
+        document.getElementById('contact_modal').style.display = "none";
+    }
+})
 
 document.addEventListener('keydown', function(e) {
     let isTabPressed = e.key === 'Tab';

@@ -10,22 +10,22 @@ function photographerFactory(data) {
         
         const imageAndName = document.createElement( 'a' );
             imageAndName.setAttribute( "aria-label", name) ;
-            imageAndName.setAttribute("href","photographer.html" + "?" + id );
+            imageAndName.setAttribute("href","photographer.html" + "?" + "id=" + id );
         const img = document.createElement( 'img' );
             img.setAttribute( "src", picture )
-            img.setAttribute( "alt", "" )
+            img.setAttribute( "alt", name )
         const h2 = document.createElement('h2');
             h2.textContent = name;
         
         const location = document.createElement( 'p' )
             location.textContent = city + ", " + country
-            location.id = "location-text"
+            location.classList = "location-text"
         const taglineP = document.createElement( 'p' )
             taglineP.textContent = tagline;
-            taglineP.id = "tagline"
+            taglineP.classList = "tagline"
         const priceP = document.createElement( 'p' )
             priceP.textContent = price + " /jour ";
-            priceP.id = "price"
+            priceP.classList = "price"
 
         
         article.appendChild(imageAndName);

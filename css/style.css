@@ -64,7 +64,7 @@ a {
     margin-block-end: 0;
 }
 
-#location-text{
+.location-text{
     font-size: 15px;
     color:#901C1C;
     text-align: center;
@@ -73,7 +73,7 @@ a {
     margin-block-end: 0;
 }
 
-#tagline {
+.tagline {
     font-size: 12px;
     text-align: center;
     align-self: center;
@@ -81,7 +81,7 @@ a {
     margin-block-end: 0;
 }
 
-#price{
+.price{
     color: #757575;
     font-size: 11px;
     text-align: center;
@@ -157,7 +157,7 @@ a {
         font-size: 26px;
     }
 
-    #location-text, #tagline, #price {
+    .location-text, .tagline, .price {
         font-size: 16px;
     }
 
@@ -213,7 +213,7 @@ a {
         font-size: 26px;
     }
 
-    #location-text, #tagline, #price {
+    .location-text, .tagline, .price {
         font-size: 14px;
     }
 
